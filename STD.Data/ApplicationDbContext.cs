@@ -10,5 +10,7 @@ namespace StudentProfile.Data
             : base(options)
         {
         }
+
+        public DbSet<Student> Students { get; set; }
     }
 }

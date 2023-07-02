@@ -15,6 +15,7 @@ namespace STD.Data.Models
         public UserStatus Active { get; set; }
         public DateTime TimeRegister { get; set; }
 
+
         [Key]
         public string  IDNumber { get; set; }
 
@@ -31,7 +32,7 @@ namespace STD.Data.Models
         [Required]
         public string IdImageUrl { get; set; }
 
-        public string Student { get; set; }
+        public Student Student { get; set; }
         public GenderType Gender { get; set; }
         [Required]
         public string Address { get; set; }
