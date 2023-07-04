@@ -20,5 +20,7 @@ namespace STD.Data.Models
 
         public byte LastYearPercent { get; set; }
 
+        public bool isDelete { get; set; }
+
     }
 }

@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using STD.Data.Models;
+using STD.Infrastructure.AutoMapper;
+using STD.Infrastructure.Services;
+using STD.Infrastructure.Services.Students;
+using STD.Infrastructure.Services.Users;
 using StudentProfile.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,9 +15,28 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IFileService,FileService>();
+builder.Services.AddScoped<IUserService,UserService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddAutoMapper(typeof(MapperProfile).Assembly);
+
+builder.Services.AddIdentity<User, IdentityRole>(
+    config => {
+        config.SignIn.RequireConfirmedAccount = false;
+        config.User.RequireUniqueEmail = true;
+        config.Password.RequireDigit = false;
+        config.Password.RequiredLength = 6;
+        config.Password.RequireLowercase = false;
+        config.Password.RequireNonAlphanumeric = false;
+        config.Password.RequireUppercase = false;
+        config.SignIn.RequireConfirmedEmail = false;
+
+    }
+
+    )
+    .AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders().AddDefaultUI();
 
 var app = builder.Build();
 

@@ -15,7 +15,7 @@ namespace STD.Data.Models
         public UserStatus Active { get; set; }
         public DateTime TimeRegister { get; set; }
 
-
+        public string Email { get; set; }
         [Key]
         public string  IDNumber { get; set; }
 
@@ -31,16 +31,19 @@ namespace STD.Data.Models
         public string PersonalImageUrl { get; set; }
         [Required]
         public string IdImageUrl { get; set; }
-
-        public Student Student { get; set; }
-        public GenderType Gender { get; set; }
-        [Required]
-        public string Address { get; set; }
-
         [Required]
         public string PhoneNumber { get; set; }
 
         public DateTime DOB { get; set; }
+        public GenderType Gender { get; set; }
+
+        public Student Student { get; set; }
+        [Required]
+        public string Address { get; set; }
+
+        public bool isDelete { get; set; }
+
+
     }
 
 }

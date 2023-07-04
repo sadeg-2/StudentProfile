@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STD.Core.Dtos
+namespace STD.Core.Dtos.Helpers
 {
    public class Pagination
     {

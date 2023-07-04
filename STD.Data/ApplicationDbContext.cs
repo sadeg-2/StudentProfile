@@ -11,6 +11,14 @@ namespace StudentProfile.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<Student>().HasQueryFilter(x => !x.isDelete);
+
+
+        }
+
         public DbSet<Student> Students { get; set; }
     }
 }

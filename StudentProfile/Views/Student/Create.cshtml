@@ -1,0 +1,143 @@
+﻿@model CreateStudentDto
+
+@{
+    ViewData["Title"] = "اضافة طالب جديد";
+    Layout = null;
+}
+
+<form asp-action="Create" class="ajaxForm" tname="#kt_datatable" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.IDNumber" class="control-label"></label>
+                <input asp-for="user.IDNumber" class="form-control" />
+                <span asp-validation-for="user.IDNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.Address" class="control-label"></label>
+                <input asp-for="user.Address" class="form-control" />
+                <span asp-validation-for="user.Address" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.FirstName" class="control-label"></label>
+                <input asp-for="user.FirstName" class="form-control" />
+                <span asp-validation-for="user.FirstName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.FatherName" class="control-label"></label>
+                <input asp-for="user.FatherName" class="form-control" />
+                <span asp-validation-for="user.FatherName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.GrandFatherName" class="control-label"></label>
+                <input asp-for="user.GrandFatherName" class="form-control" />
+                <span asp-validation-for="user.GrandFatherName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.FamilyName" class="control-label"></label>
+                <input asp-for="user.FamilyName" class="form-control" />
+                <span asp-validation-for="user.FamilyName" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.Email" class="control-label"></label>
+                <input asp-for="user.Email" class="form-control" />
+                <span asp-validation-for="user.Email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.PhoneNumber" class="control-label"></label>
+                <input asp-for="user.PhoneNumber" class="form-control" />
+                <span asp-validation-for="user.PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.DOB" class="control-label"></label>
+                <input asp-for="user.DOB" class="form-control" />
+                <span asp-validation-for="user.DOB" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+         <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.Gender" class="control-label"></label>
+                <select asp-for="user.Gender" class="form-control">
+                    <option value="@GenderType.Male">ذكر</option>
+                    <option value="@GenderType.Female">انثى</option>
+                </select>
+                <span asp-validation-for="user.Gender" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.IdImageUrl" class="control-label"></label>
+                <input asp-for="user.IdImageUrl" class="form-control" />
+                <span asp-validation-for="user.IdImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="user.PersonalImageUrl" class="control-label"></label>
+                <input asp-for="user.PersonalImageUrl" class="form-control" />
+                <span asp-validation-for="user.PersonalImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Level" class="control-label"></label>
+                <input asp-for="Level" class="form-control" />
+                <span asp-validation-for="Level" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="LastYearPercent" class="control-label"></label>
+                <input asp-for="LastYearPercent" class="form-control" />
+                <span asp-validation-for="LastYearPercent" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="EnrollmentDate" class="control-label"></label>
+                <input asp-for="EnrollmentDate" class="form-control" />
+                <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <input type="submit" value="اضافة" class="btn btn-primary" />
+        <a data-dismiss="modal" aria-label="Close" class="btn btn-danger">الغاء</a>
+    </div>
+    
+
+</form>
+
+
+<script>
+    PageLoadActions();
+</script>
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>

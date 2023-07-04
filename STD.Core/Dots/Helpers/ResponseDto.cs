@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace STD.Core.Dtos
+namespace STD.Core.Dtos.Helpers
 {
     public class Meta
     {

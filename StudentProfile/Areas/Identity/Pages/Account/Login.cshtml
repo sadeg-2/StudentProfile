@@ -1,82 +1,117 @@
 ﻿@page
 @model LoginModel
+
 @{
-	Layout = null;
+    ViewData["Title"] = "تسجيل الدخول";
+    Layout = null;
 }
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en" direction="rtl" style="direction: rtl;">
 <head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-	<meta name="description" content="" />
-	<meta name="author" content="" />
-	<title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
-	<!-- loader-->
-	<link href="~/assets/css/pace.min.css" rel="stylesheet" />
-	<script src="~/assets/js/pace.min.js"></script>
-	<!--favicon-->
-	<link rel="icon" href="~/assets/images/favicon.ico" type="image/x-icon">
-	<!-- Bootstrap core CSS-->
-	<link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
-	<!-- animate CSS-->
-	<link href="~/assets/css/animate.css" rel="stylesheet" type="text/css" />
-	<!-- Icons CSS-->
-	<link href="~/assets/css/icons.css" rel="stylesheet" type="text/css" />
-	<!-- Custom Style-->
-	<link href="~/assets/css/app-style.css" rel="stylesheet" />
+    <base href="../../../">
+    <meta charset="utf-8" />
+    <title> @ViewData["Title"] </title>
+    <link rel="icon" href="~/title_logo.png"
+          type="image/x-icon">
+    <meta name="description" content="Initialized via remote ajax json data" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="canonical" href="https://keenthemes.com/metronic" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+    <link href="~/assets/plugins/global/plugins.bundle.rtl.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/plugins/custom/prismjs/prismjs.bundle.rtl.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/style.bundle.rtl.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/themes/layout/header/base/light.rtl.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/themes/layout/header/menu/light.rtl.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/themes/layout/brand/light.rtl.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/themes/layout/aside/light.rtl.css" rel="stylesheet" type="text/css" />
+    <link href="~/assets/css/pages/login/login-1.rtl.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/LogoIcon.jpg" />
 
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+    </style>
 </head>
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
+    <!--begin::Main-->
+    <div class="d-flex flex-column flex-root">
+        <!--begin::Login-->
+        <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
+            <!--begin::Aside-->
+            <div class="login-aside d-flex flex-column flex-row-auto" style="background-color: #F2C98A;">
+                <!--begin::Aside Top-->
+                <div class="d-flex flex-column-auto flex-column pt-lg-40 pt-15">
+                    <!--begin::Aside header-->
+                    <a href="#" class="text-center mb-10">
+                        <img src="assets/media/logos/logo-letter-1.png" class="max-h-70px" alt="" />
+                    </a>
+                    <!--end::Aside header-->
+                    <!--begin::Aside title-->
+                    <h3 class="font-weight-bolder text-center font-size-h4 font-size-h1-lg" style="color: #986923;">
+                        نظام ادارة الطلاب
+                    </h3>
 
-<body class="bg-theme bg-theme1">
+                    <img src="~/ThemImages/cms-logo.png" width="40%" style="margin:auto; margin-top: 50px;" />
+                    <!--end::Aside title-->
+                </div>
+                <!--end::Aside Top-->
 
-	<!-- Start wrapper-->
-	<div id="wrapper">
-		<div class="card card-authentication1 mx-auto my-5">
-			<div class="card-body">
-				<div class="card-content p-2">
-					<div class="text-center">
-						<img src="~/assets/images/logo-icon.png" alt="logo icon">
-					</div>
-					<div class="card-title text-uppercase text-center py-3">Sign In</div>
-					<form id="account" method="post">
-						<div class="form-group">
-							<label asp-for="Input.Email" class="sr-only">Username</label>
-							<div class="position-relative has-icon-right">
-								<input asp-for="Input.Email" autocomplete="username" aria-required="true" class="form-control input-shadow" placeholder="Enter Username">
-								<div class="form-control-position">
-									<i class="icon-user"></i>
-								</div>
-							</div>
-							<span asp-validation-for="Input.Email" class="text-danger"></span>
-						</div>
-						<div class="form-group">
-							<label asp-for="Input.Password" class="sr-only">Password</label>
-							<div class="position-relative has-icon-right">
-								<input asp-for="Input.Password" autocomplete="current-password" aria-required="true" type="password" id="exampleInputPassword" class="form-control input-shadow" placeholder="Enter Password">
-								<div class="form-control-position">
-									<i class="icon-lock"></i>
-								</div>
-							</div>
-							<span asp-validation-for="Input.Password" class="text-danger"></span>
-						</div>
-						<br>
-						<input class="btn btn-light btn-block" id="login-submit" type="submit" name="submit" value="Login">
-					</form>
-				</div>
-			</div>
-		</div>
-	</div><!--wrapper-->
-	<!-- Bootstrap core JavaScript-->
-	<script src="~/assets/js/jquery.min.js"></script>
-	<script src="~/assets/js/popper.min.js"></script>
-	<script src="~/assets/js/bootstrap.min.js"></script>
+            </div>
+            <!--begin::Aside-->
+            <!--begin::Content-->
+            <div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
+                <!--begin::Content body-->
+                <div class="d-flex flex-column-fluid flex-center">
+                    <!--begin::Signin-->
+                    <div class="login-form login-signin">
+                        <!--begin::Form-->
+                        <form method="post" class="ajaxForm" id="kt_login_signin_form">
+                            <!--begin::Title-->
+                            <div class="pb-13 pt-lg-0 pt-5">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">مرحبا بك ..</h3>
+                            </div>
+                            <!--begin::Title-->
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <label class="font-size-h6 font-weight-bolder text-dark">أسم المستخدم</label>
+                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg" asp-for="Input.Email" autocomplete="off" />
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <!--end::Form group-->
+                            <!--begin::Form group-->
+                            <div class="form-group">
+                                <div class="d-flex justify-content-between mt-n5">
+                                    <label class="font-size-h6 font-weight-bolder text-dark pt-5">كلمة المرور</label>
 
-	<!-- sidebar-menu js -->
-	<script src="~/assets/js/sidebar-menu.js"></script>
+                                </div>
+                                <input class="form-control form-control-solid h-auto py-6 px-6 rounded-lg" type="password" asp-for="Input.Password" autocomplete="off" />
+                                <span asp-validation-for="Input.Password" class="text-danger"></span>
+                            </div>
+                            <!--end::Form group-->
+                            <!--begin::Action-->
+                            <div class="pb-lg-0 pb-5">
+                                <button type="submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3">تسجيل الدخول</button>
+                            </div>
+                            <!--end::Action-->
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Signin-->
 
-	<!-- Custom scripts -->
-	<script src="~/assets/js/app-script.js"></script>
+                </div>
+                <!--end::Content body-->
 
+            </div>
+            <!--end::Content-->
+        </div>
+        <!--end::Login-->
+    </div>
+    <!--end::Global Theme Bundle-->
+    <script src="~/assets/js/pages/custom/login/login-general.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>
